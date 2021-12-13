@@ -11,6 +11,11 @@ router.use('/users', require('./users'));
 
 router.use('/posts', require('./posts'));
 
+router.use('/signup', require('./signup'));
+
+router.use('/signin', require('./signin'));
+
+
 // for any further routes, access from here 
 // router.use('/routerName', require('./routerFile'));
 
