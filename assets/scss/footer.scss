@@ -1,0 +1,22 @@
+footer{
+    background-color: rgb(117, 116, 111);
+    padding: 1rem;
+
+    .footer_container{
+        display: flex;
+
+        .rights span{
+            margin-right: 1rem;
+        }
+        .home_profile{
+            .home a{
+                text-decoration: none;
+                color: aquamarine;
+            }
+            .profile a{
+                text-decoration: none;
+                color: aquamarine;
+            }
+        }
+    }
+}

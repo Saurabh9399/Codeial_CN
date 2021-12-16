@@ -1,0 +1,29 @@
+.header_container {
+  display: flex;
+  justify-content: space-between;
+  background-image: linear-gradient(180deg, #1086db, #0048e5);
+  padding: 1rem;
+  width: 100%;
+  position: fixed;
+  top: 0; }
+  .header_container .site_logo span {
+    color: aliceblue;
+    font-weight: bold;
+    font-size: 1.5em; }
+  .header_container .right_header {
+    display: flex; }
+    .header_container .right_header .site_user_name {
+      color: white;
+      margin-right: 1rem; }
+    .header_container .right_header .logout a {
+      text-decoration: none;
+      color: white;
+      margin-right: 1rem; }
+    .header_container .right_header .signin a {
+      color: white;
+      text-decoration: none;
+      margin-right: 1rem; }
+    .header_container .right_header .signup a {
+      color: white;
+      text-decoration: none;
+      margin-right: 1rem; }

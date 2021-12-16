@@ -54,6 +54,9 @@ module.exports.signUp = function (req, res) {
   if (req.isAuthenticated()) {
     return res.redirect('/users/profile');
   }
+  res.render('signup', {
+    title: 'Sign Up',
+  });
 }
 
 // sign in and create session for user
@@ -61,5 +64,12 @@ module.exports.createSession = function (req, res) {
   
   return res.redirect('/');
 
+}
+
+module.exports.destroySession = function (req, res) {
+
+  req.logout();
+
+  return res.redirect('/');
 }
 

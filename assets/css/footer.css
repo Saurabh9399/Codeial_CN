@@ -1,0 +1,13 @@
+footer {
+  background-color: #75746f;
+  padding: 1rem; }
+  footer .footer_container {
+    display: flex; }
+    footer .footer_container .rights span {
+      margin-right: 1rem; }
+    footer .footer_container .home_profile .home a {
+      text-decoration: none;
+      color: aquamarine; }
+    footer .footer_container .home_profile .profile a {
+      text-decoration: none;
+      color: aquamarine; }

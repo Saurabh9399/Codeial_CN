@@ -1,0 +1,39 @@
+.header_container{
+    display: flex;
+    justify-content: space-between;
+    background-image: linear-gradient(180deg,#1086db,#0048e5);
+    padding: 1rem;
+    width: 100%;
+    position: fixed;
+    top: 0;
+
+    .site_logo span{
+        color: aliceblue;
+        font-weight: bold;
+        font-size: 1.5em;
+    }
+
+    .right_header{
+        display: flex;
+
+        .site_user_name{
+            color: white;
+            margin-right: 1rem;
+        }
+        .logout a{
+            text-decoration: none;
+            color: white;
+            margin-right: 1rem;
+        }
+        .signin a{
+            color: white;
+            text-decoration: none;
+            margin-right: 1rem;
+        }
+        .signup a{
+            color: white;
+            text-decoration: none;
+            margin-right: 1rem;
+        }
+    }
+}
