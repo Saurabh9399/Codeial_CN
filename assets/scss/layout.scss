@@ -3,5 +3,9 @@ body {
   // text-align: center;
   #layout-main {
     height: 100vh;
+    overflow: scroll;
+  }
+  #layout-main::-webkit-scrollbar{
+    display: none;
   }
 }

@@ -1,26 +1,28 @@
-
-const User = require('../models/user')
+const User = require("../models/user");
 
 module.exports.profile = function (req, res) {
-  res.render("user_profile", {
-    title: "Users profile"
+  User.findById(req.params.id, function (err, user) {
+    return res.render("user_profile", {
+      title: "Users profile",
+      profile_user:user
+    });
   });
 };
 
 // render the signup page
 module.exports.signUp = function (req, res) {
   res.render("signup", {
-    title: "Codeial | Sign Up"
+    title: "Codeial | Sign Up",
   });
 };
 
 // render the signin page
 module.exports.signIn = function (req, res) {
   if (req.isAuthenticated()) {
-    return res.redirect('/users/profile');
+    return res.redirect("/users/profile");
   }
   res.render("signin", {
-    title: "Codeial | Sign In" 
+    title: "Codeial | Sign In",
   });
 };
 
@@ -29,7 +31,7 @@ module.exports.create = function (req, res) {
   if (req.body.password != req.body.confirm_password) {
     return res.redirect("back");
   }
-  
+
   User.findOne({ email: req.body.email }, function (err, user) {
     if (err) {
       console.log("Error in finding user in signing up");
@@ -44,35 +46,37 @@ module.exports.create = function (req, res) {
         return res.redirect("/users/user-signin");
       });
     } else {
-      return res.redirect('back');
+      return res.redirect("back");
     }
-  })
-  
-}
+  });
+};
 // render the signup page
 module.exports.signUp = function (req, res) {
   if (req.isAuthenticated()) {
-    return res.redirect('/users/profile');
+    return res.redirect("/users/profile");
   }
-  res.render('signup', {
-    title: 'Sign Up',
+  res.render("signup", {
+    title: "Sign Up",
   });
-}
+};
 
 // sign in and create session for user
 module.exports.createSession = function (req, res) {
-  
-  return res.redirect('/');
-
-}
+  return res.redirect("/");
+};
 
 module.exports.destroySession = function (req, res) {
-
   req.logout();
 
-  return res.redirect('/');
+  return res.redirect("/");
+};
+
+module.exports.update = function (req, res) {
+  if (req.user.id == req.params.id) {
+    User.findByIdAndUpdate(req.params.id, req.body, function (err, user) {
+      return res.redirect('back');
+    });
+  } else {
+    return res.status(401).send('Unauthorized');
+  }
 }
-
-
-
-
